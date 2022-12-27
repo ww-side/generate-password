@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="js/libs/gsap/gsap.min.js" defer></script>
+  <script src="js/libs/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="js/libs/gsap/ScrollSmoother.min.js" defer></script>
+  <script src="js/scrollSmooth.js" defer></script>
+  <script src="js/index.js" defer></script>
+  <title>GPassword</title>
+</head>
+<body>
+<div class="wrapper">
+  <div class="content">
+    <header class="header">
+      <div class="copy">
+        <a class="copyLink" href="https://github.com/ww-side" target=”_blank”>© ww_side</a>
+      </div>
+      <div class="layers">
+        <div class="layerHeader">
+          <div class="layersCaption">GPassword</div>
+          <div class="layersTitle">Generate you personal a password</div>
+        </div>
+        <div class="layer layersBase" style="background-image: url(assets/img/blackBg.png);"></div>
+        <div class="layer layersFront" style="background-image: url(assets/img/front.png);"></div>
+      </div>
+    </header>
+    <article class="article" style="background-image: url(assets/img/blackBg.png);">
+      <div class="articleContent">
+        <h2 class="articleHeader">Create password</h2>
+        <div class="articleWorkspace">
+          <div class="inputNumber">
+            <span class="condition">(Min - 1. Max - 30)</span>
+            <label class="inputNumberTitle" for="passwordLength">Password length</label>
+            <input class="passwordLength" id="passwordLength" min="1" max="50" type="number" value="10">
+          </div>
+          <div class="checkboxBlock">
+            <div class="checkboxItem">
+              <label for="numbers">Numbers</label>
+              <input class="numbers checkbox" id="numbers" type="checkbox" checked="checked">
+            </div>
+            <div class="checkboxItem">
+              <label for="lowercase">Lowercase</label>
+              <input class="lowercase checkbox" id="lowercase" type="checkbox" checked="checked">
+            </div>
+            <div class="checkboxItem">
+              <label for="uppercase">Uppercase</label>
+              <input class="uppercase checkbox" id="uppercase" type="checkbox" checked="checked">
+            </div>
+            <div class="checkboxItem">
+              <label for="specialSymbols">Special symbols</label>
+              <input class=".specialSymbols checkbox" id="specialSymbols" type="checkbox" checked="checked">
+            </div>
+          </div>
+          <div class="buttonBlock">
+            <button class="button">Generate</button>
+          </div>
+          <div class="output"></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+</body>
+</html>

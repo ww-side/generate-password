@@ -1,0 +1,73 @@
+.copy {
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .45;
+  font-size: calc(var(--index) * 1);
+  letter-spacing: calc(var(--index) / 37.5);
+}
+
+.copyLink {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.header {
+  position: relative;
+}
+
+.layers {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.layersBase {
+  transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+  z-index: 0;
+}
+
+.layersFront {
+  transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+
+.layerHeader {
+  z-index: 1;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  transition: var(--transition);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--text);
+  text-shadow: 0 0 5px #4ab3e6;
+}
+
+.layersTitle {
+  font-size: calc(var(--index) * 1.6);
+  letter-spacing: calc(var(--index) * 0.3);
+  font-family: raleway_f, sans-serif;
+}
+
+.layersCaption {
+  font-size: calc(var(--index) * 3);
+  letter-spacing: calc(var(--index) / 3);
+  margin-top: calc(var(--index) * -.75);
+  font-family: anurati_r, sans-serif;
+  color: #00a7e0;
+}

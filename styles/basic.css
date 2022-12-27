@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-feature-settings: 'liga' off;
+}
+
+body {
+  background-color: #010101;
+  color: var(--text);
+  font-family: montserrat_r, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #010101;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00a7e0;
+  border-radius: 10px;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --text: #e7e7e0;
+  --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+@font-face {
+  font-family: raleway_f;
+  src: url(../assets/fonts/raleway-regular.woff2);
+}
+
+@font-face {
+  font-family: raleway_f;
+  src: url(../assets/fonts/raleway-black.woff2);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: anurati_r;
+  src: url(../assets/fonts/anurati-regular.woff2);
+}
+
+@font-face {
+  font-family: montserrat_r;
+  src: url(../assets/fonts/montserrat-regular.woff);
+}
