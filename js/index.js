@@ -55,39 +55,50 @@ let checkSpecialSymbols = () => {
 };
 
 function printPassword(length) {
-  if (length <= 0 || length > 30) {
-    alert('Not correct number. Min - 1 character, Max - 30 characters.');
-  } else if (checkNumbers() && checkLowerCase() && checkUpperCase() && checkSpecialSymbols()) {
-    generatePassword(length, fullChars);
-  } else if (checkNumbers() && checkLowerCase() && checkUpperCase()) {
-    generatePassword(length, numberChars + lowerCaseChars + upperCaseChars);
-  } else if (checkNumbers() && checkLowerCase() && checkSpecialSymbols()) {
-    generatePassword(length, numberChars + lowerCaseChars + upperCaseChars);
-  } else if (checkNumbers() && checkUpperCase() && checkSpecialSymbols()) {
-    generatePassword(length, numberChars + upperCaseChars + specialSymbols);
-  } else if (checkLowerCase() && checkUpperCase() && checkSpecialSymbols()) {
-    generatePassword(length, lowerCaseChars + upperCaseChars + specialSymbols);
-  } else if (checkNumbers() && checkLowerCase()) {
-    generatePassword(length, numberChars + lowerCaseChars);
-  } else if (checkNumbers() && checkUpperCase()) {
-    generatePassword(length, numberChars + upperCaseChars);
-  } else if (checkNumbers() && checkSpecialSymbols()) {
-    generatePassword(length, numberChars + specialSymbols);
-  } else if (checkLowerCase() && checkUpperCase()) {
-    generatePassword(length, lowerCaseChars + upperCaseChars);
-  } else if (checkLowerCase() && checkSpecialSymbols()) {
-    generatePassword(length, lowerCaseChars + specialSymbols);
-  } else if (checkUpperCase() && checkSpecialSymbols()) {
-    generatePassword(length, upperCaseChars + specialSymbols);
-  } else if (checkNumbers()) {
-    generatePassword(length, numberChars);
-  } else if (checkLowerCase()) {
-    generatePassword(length, lowerCaseChars);
-  } else if (checkUpperCase()) {
-    generatePassword(length, upperCaseChars);
-  } else if (checkSpecialSymbols()) {
-    generatePassword(length, specialSymbols);
-  } else {
-    generatePassword(length, fullChars);
-  }
+  if (length <= 0 || length > 30) alert('Not correct number. Min - 1 character, Max - 30 characters.');
+  
+  if (checkNumbers() && checkLowerCase() && checkUpperCase() && checkSpecialSymbols())
+    return generatePassword(length, fullChars);
+  
+  if (checkNumbers() && checkLowerCase() && checkUpperCase())
+    return generatePassword(length, numberChars + lowerCaseChars + upperCaseChars);
+  
+  if (checkNumbers() && checkLowerCase() && checkSpecialSymbols())
+    return generatePassword(length, numberChars + lowerCaseChars + upperCaseChars);
+  
+  if (checkNumbers() && checkUpperCase() && checkSpecialSymbols())
+    return generatePassword(length, numberChars + upperCaseChars + specialSymbols);
+  
+  if (checkLowerCase() && checkUpperCase() && checkSpecialSymbols())
+    return generatePassword(length, lowerCaseChars + upperCaseChars + specialSymbols);
+  
+  if (checkNumbers() && checkLowerCase())
+    return generatePassword(length, numberChars + lowerCaseChars);
+  
+  if (checkNumbers() && checkUpperCase())
+    return generatePassword(length, numberChars + upperCaseChars);
+  
+  if (checkNumbers() && checkSpecialSymbols())
+    return generatePassword(length, numberChars + specialSymbols);
+  
+  if (checkLowerCase() && checkUpperCase())
+    return generatePassword(length, lowerCaseChars + upperCaseChars);
+  
+  if (checkLowerCase() && checkSpecialSymbols())
+    return generatePassword(length, lowerCaseChars + specialSymbols);
+  
+  if (checkUpperCase() && checkSpecialSymbols())
+    return generatePassword(length, upperCaseChars + specialSymbols);
+  
+  if (checkNumbers())
+    return generatePassword(length, numberChars);
+  
+  if (checkLowerCase())
+    return generatePassword(length, lowerCaseChars);
+  
+  if (checkUpperCase())
+    return generatePassword(length, upperCaseChars);
+  
+  if (checkSpecialSymbols())
+    return generatePassword(length, specialSymbols);
 }
