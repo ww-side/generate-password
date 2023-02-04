@@ -21,7 +21,7 @@ function createPassword(length, characters) {
   return result;
 }
 
-function generatePassword (length, characters) {
+function generatePasswordList (length, characters) {
   let lengthList = 3;
   const passwords = [...Array(lengthList)];
   
@@ -55,50 +55,52 @@ let checkSpecialSymbols = () => {
 };
 
 function printPassword(length) {
-  if (length <= 0 || length > 30) alert('Not correct number. Min - 1 character, Max - 30 characters.');
+  if (length <= 0 || length > 30) {
+    alert('Not correct number. Min - 1 character, Max - 30 characters.');
+  } else {
+    if (checkNumbers() && checkLowerCase() && checkUpperCase() && checkSpecialSymbols())
+      return generatePasswordList(length, fullChars);
   
-  if (checkNumbers() && checkLowerCase() && checkUpperCase() && checkSpecialSymbols())
-    return generatePassword(length, fullChars);
+    if (checkNumbers() && checkLowerCase() && checkUpperCase())
+      return generatePasswordList(length, numberChars + lowerCaseChars + upperCaseChars);
   
-  if (checkNumbers() && checkLowerCase() && checkUpperCase())
-    return generatePassword(length, numberChars + lowerCaseChars + upperCaseChars);
+    if (checkNumbers() && checkLowerCase() && checkSpecialSymbols())
+      return generatePasswordList(length, numberChars + lowerCaseChars + upperCaseChars);
   
-  if (checkNumbers() && checkLowerCase() && checkSpecialSymbols())
-    return generatePassword(length, numberChars + lowerCaseChars + upperCaseChars);
+    if (checkNumbers() && checkUpperCase() && checkSpecialSymbols())
+      return generatePasswordList(length, numberChars + upperCaseChars + specialSymbols);
   
-  if (checkNumbers() && checkUpperCase() && checkSpecialSymbols())
-    return generatePassword(length, numberChars + upperCaseChars + specialSymbols);
+    if (checkLowerCase() && checkUpperCase() && checkSpecialSymbols())
+      return generatePasswordList(length, lowerCaseChars + upperCaseChars + specialSymbols);
   
-  if (checkLowerCase() && checkUpperCase() && checkSpecialSymbols())
-    return generatePassword(length, lowerCaseChars + upperCaseChars + specialSymbols);
+    if (checkNumbers() && checkLowerCase())
+      return generatePasswordList(length, numberChars + lowerCaseChars);
   
-  if (checkNumbers() && checkLowerCase())
-    return generatePassword(length, numberChars + lowerCaseChars);
+    if (checkNumbers() && checkUpperCase())
+      return generatePasswordList(length, numberChars + upperCaseChars);
   
-  if (checkNumbers() && checkUpperCase())
-    return generatePassword(length, numberChars + upperCaseChars);
+    if (checkNumbers() && checkSpecialSymbols())
+      return generatePasswordList(length, numberChars + specialSymbols);
   
-  if (checkNumbers() && checkSpecialSymbols())
-    return generatePassword(length, numberChars + specialSymbols);
+    if (checkLowerCase() && checkUpperCase())
+      return generatePasswordList(length, lowerCaseChars + upperCaseChars);
   
-  if (checkLowerCase() && checkUpperCase())
-    return generatePassword(length, lowerCaseChars + upperCaseChars);
+    if (checkLowerCase() && checkSpecialSymbols())
+      return generatePasswordList(length, lowerCaseChars + specialSymbols);
   
-  if (checkLowerCase() && checkSpecialSymbols())
-    return generatePassword(length, lowerCaseChars + specialSymbols);
+    if (checkUpperCase() && checkSpecialSymbols())
+      return generatePasswordList(length, upperCaseChars + specialSymbols);
   
-  if (checkUpperCase() && checkSpecialSymbols())
-    return generatePassword(length, upperCaseChars + specialSymbols);
+    if (checkNumbers())
+      return generatePasswordList(length, numberChars);
   
-  if (checkNumbers())
-    return generatePassword(length, numberChars);
+    if (checkLowerCase())
+      return generatePasswordList(length, lowerCaseChars);
   
-  if (checkLowerCase())
-    return generatePassword(length, lowerCaseChars);
+    if (checkUpperCase())
+      return generatePasswordList(length, upperCaseChars);
   
-  if (checkUpperCase())
-    return generatePassword(length, upperCaseChars);
-  
-  if (checkSpecialSymbols())
-    return generatePassword(length, specialSymbols);
+    if (checkSpecialSymbols())
+      return generatePasswordList(length, specialSymbols);
+  }
 }
