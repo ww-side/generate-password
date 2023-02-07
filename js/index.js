@@ -7,7 +7,7 @@ const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const specialSymbols = '!@#$%^&-_';
 const fullChars = numberChars + lowerCaseChars + upperCaseChars + specialSymbols;
 
-button.onclick = function() {
+button.onclick = () => {
   const passwordLength = document.querySelector('#passwordLength').value;
   printPassword(passwordLength);
 };
